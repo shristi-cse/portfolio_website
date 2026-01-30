@@ -1,0 +1,2358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+@font-face {
+    font-family: 'Pixel';
+    src: url(PixelOperator.ttf);
+}
+
+@font-face {
+    font-family: '4B';
+    src: url(04B.TTF);
+}
+
+@font-face {
+    font-family: 'Smash';
+    src: url(Smash\ Brush.otf);
+}
+@font-face {
+    font-family: 'Amoria';
+    src: url(AMORIA.otf);
+}
+
+body {
+    background-image: url(pd23.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 5%;
+}
+
+.logo {
+    width: 5rem;
+    height: auto;
+}
+
+.floating-icons {
+    display: flex;
+    position: relative;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.float-icon {
+    position: absolute;
+    image-rendering: pixelated;
+    opacity: 0.9;
+    animation: float 6s ease-in-out infinite;
+}
+
+.icon-star {
+    top: 10rem;
+    left: 5rem;
+    width: 5.5rem;
+}
+
+.icon-heart {
+    top: 19rem;
+    right: 4rem;
+    width: 4rem;
+}
+
+.icon-teddy {
+    top: 7rem;
+    right: 9rem;
+    width: 5rem;
+}
+
+.icon-Spider-Man {
+    top: 12rem;
+    left: 42rem;
+    width: 4.7rem;
+}
+
+.icon-earth {
+    top: 28rem;
+    right: 45rem;
+    width: 4rem;
+}
+
+.icon-cd {
+    top: 32rem;
+    right: 11rem;
+    width: 3.6rem;
+}
+
+.icon-Minecraft {
+    top: 6rem;
+    left: 26rem;
+    width: 3.8rem;
+}
+
+@keyframes float {
+    0% { transform: translateY(0);}
+    50% { transform: translateY(-20px);}
+    100% { transform: translateY(0);}
+}
+
+.hero {
+    display: flex;
+    z-index: 9999;
+}
+
+.content {
+    margin-top: 20%;
+    margin-left: 5%;
+    justify-content: space-between;
+}
+
+.content h2 {
+    font-family: '4B';
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    color: #161E54;;
+    text-align: center;
+}
+
+.content p {
+    font-family: 'Pixel';
+    font-size: clamp(1rem, 3vw, 2rem);
+    color: #11224E;;
+    text-align: center;
+}
+
+.nintendo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 10%;
+    margin-right: 5%;
+}
+
+.ds {
+    width: 80%;
+    display: block;
+}
+
+.top-screen {
+    background-image: url('Retrobeach.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 16.3%;
+    left: 24.6%;
+    height: 30%;
+    width: 32%;
+    text-align: center;
+}
+
+.screen-text {
+    font-size: clamp(0.1rem, 2.3vw, 3rem);
+    margin-top: clamp(1%, 10%, 15%);
+    font-family: '4B';
+    font-weight: 150;
+    color: #FFD65A;
+    text-align: center;
+
+    text-shadow: 
+        -0.15625rem 0 #F14A00,
+        0.15625rem 0 #F14A00,
+        0 -0.15625rem #F14A00,
+        0 0.15625rem #F14A00;
+}
+
+.bottom-screen {
+    background-image: url('Pixelbb.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    top: 56.2%;
+    left: 24.5%;
+    height: 29.5%;
+    width: 32%;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-screen button {
+    width: clamp(3rem, 10vw, 9.5rem);
+    padding: 0.134rem 0;
+    font-size: clamp(0.55rem, 1.2vw, 1.899rem);
+    font-family: '4B';
+    font-weight: 100;
+    background: linear-gradient(#A2CA71, #A2CA71);
+    border: 0.1875rem solid #543A14;
+    border-radius: 0.75rem;
+    color: #432323;
+    cursor: pointer;
+}
+
+.bottom-screen button:hover {
+    background: linear-gradient(#DEF9C4, #DEF9C4);
+}
+
+.Me {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 100;
+  background-color: #A2CA71;
+  width: 90%;
+  max-width: 500px;
+  height: 90%;
+  max-height: 60vh;
+  overflow: hidden;
+}
+
+.Me.dragging {
+  transition: none;
+}
+
+.Me.active {
+  display: block;
+}
+
+.header {
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFEDFA;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid black;
+  cursor: grab;
+  user-select: none;
+}
+
+.header:active {
+  cursor: grabbing;
+}
+
+.header .title {
+  font-size: 1.5rem;
+  font-family: 'Pixel';
+  font-weight: bold;
+}
+
+.header .close-button {
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.header-body {
+  padding: 1rem 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.header-body img {
+  width: 40%;
+  height: auto;
+}
+
+.about-text {
+  font-family: 'Pixel';
+}
+
+.about-text h3 {
+  margin: 0 0 1rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.5rem;
+}
+
+.about-text p span {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.about-text p {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.about-text ul span{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.about-text li {
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+
+.Skills {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 100;
+  background-color: #A2CA71;
+  width: 90%;
+  max-width: 500px;
+  height: 90%;
+  max-height: 58%;
+  overflow: hidden;
+}
+
+.Skills.dragging {
+  transition: none;
+}
+
+.Skills.active {
+  display: block;
+}
+
+.skills-header {
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFEDFA;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid black;
+  cursor: grab;
+  user-select: none;
+}
+
+.skills-header:active {
+  cursor: grabbing;
+}
+
+.skills-header .skills-title {
+  font-size: 1.5rem;
+  font-family: 'Pixel';
+  font-weight: bold;
+}
+
+.skills-header .close-btn {
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.about-skills {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Pixel';
+  padding: 1rem 1rem;
+  max-height: 48vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  scrollbar-width: thin;
+}
+
+.about-skills::-webkit-scrollbar {
+  width: 6px;
+}
+
+.about-skills::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.about-skills h2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.about-skills h3 {
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+
+.about-skills li {
+  font-size: 1.3rem;
+  margin-left: 2rem;
+}
+
+.skills-note {
+  font-family: 'Smash';
+  opacity: 1;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.contact {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 100;
+  background-color: #A2CA71;
+  width: 90%;
+  max-width: 500px;
+  height: 90%;
+  max-height: 60vh;
+  overflow: hidden;
+}
+
+.contact.dragging {
+  transition: none;
+}
+
+.contact.active {
+  display: block;
+}
+
+.links-header {
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFEDFA;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid black;
+  cursor: grab;
+  user-select: none;
+}
+
+.links-header:active {
+  cursor: grabbing;
+}
+
+.links-title {
+  font-size: 1.5rem;
+  font-family: 'Pixel';
+  font-weight: bold;
+}
+
+.links-header .links-close {
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.links-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.links-body a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: black;
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  background: rgb(255, 255, 255, 0.45);
+  transition: transform 0.15s ease;
+  background: 0.15s ease;
+}
+
+.links-body img {
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.git img {
+  width: 6vw;
+  height: 6vh;
+}
+
+.git span {
+  font-family: 'Pixel';
+  font-size: 2rem;
+}
+
+.linkedin img {
+  width: 6vw;
+  height: 6vh;
+}
+
+.linkedin span {
+  font-family: 'Pixel';
+  font-size: 2rem;
+}
+
+.mail img {
+  width: 6.5vw;
+  height: 6.5vh;
+}
+
+.mail span {
+  font-family: 'Pixel';
+  font-size: 2rem;
+}
+
+.mobile-notice {
+  position: fixed;
+  bottom: -200px;
+  left: 0;
+  width: 100%;
+  background: #fff6cc;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  transition: bottom 0.4s ease;
+  z-index: 9999;
+  font-family: sans-serif;
+}
+
+.mobile-notice button {
+  background: #FFD65A;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@media (width: 430px) {
+    body{
+        overflow-x: hidden;
+    }
+    .hero {
+        flex-direction: column;
+    }
+
+    .logo {
+        width: 3.4rem;
+        height: auto;
+    }
+
+    .content h2{
+        margin-top: 20%;
+        font-size: 1.7rem;
+        transform: translateX(-3%);
+    }
+
+    .content p {
+        font-size: 0.9rem;
+        transform: translateX(-3%);
+    }
+
+    .nintendo {
+        margin-top: 0;
+        width: 80%;
+        transform: translateX(20%);
+    }
+
+    .screen-text {
+        font-size: clamp(-1rem, 5vw, 1.2rem);
+    }
+
+    .bottom-screen button {
+        width: clamp(4.7rem, 4vw, 6rem);
+        padding: 0.1rem 0;
+        font-size: clamp(0.22rem, 2vw, 0.7rem);
+        border: 0.156rem solid #543A14;
+    }
+
+    .icon-star {
+      top: 7.8rem;
+      left: 1.7rem;
+      width: 2.9rem;
+    }
+
+    .icon-heart {
+      top: 8rem;
+      right: 2.5rem;
+      width: 2.6rem;
+    }
+
+    .icon-teddy {
+      top: 15rem;
+      right: 3rem;
+      width: 3rem;
+    }
+
+    .icon-Spider-Man {
+      top: 23rem;
+      left: 1rem;
+      width: 2.8rem;
+    }
+
+    .icon-earth {
+      top: 16rem;
+      right: 21rem;
+      width: 2.7rem;
+    }
+
+    .icon-cd {
+      top: 22rem;
+      right: 4.6rem;
+      width: 2.5rem;
+    }
+
+    .icon-Minecraft {
+      top: 5rem;
+      left: 11rem;
+      width: 2.6rem;
+    }
+
+    .header .title {
+      font-size: 1rem;
+    }
+
+    .header .close-button {
+      font-size: 1rem;
+    }
+
+    .header {
+      padding: 0.6rem 0.6rem;
+    }
+
+    .header-body img {
+      width: 34%;
+      height: 34%;
+    }
+
+    .about-text h3 {
+      font-size: 1rem;
+      margin: 0 0 0.3rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .about-text p span {
+      font-size: 0.9rem;
+    }
+
+    .about-text p {
+      font-size: 0.9rem;
+    }
+
+    .about-text ul span {
+      font-size: 0.9rem;
+    }
+
+    .about-text li {
+      font-size: 0.7rem;
+    }
+
+    .Skills {
+      width: 90%;
+      max-width: 500px;
+      height: 110%;
+      max-height: 60vh;
+    }
+
+    .skills-header {
+      padding: 0.3rem 0.3rem;
+    }
+
+    .skills-header .skills-title {
+      font-size: 1rem;
+    }
+
+    .skills-header .close-btn {
+      font-size: 0.8rem;
+    }
+
+    .about-skills h2 {
+      font-size: 1.4rem;
+    }
+
+    .about-skills h3 {
+      font-size: 1rem;
+    }
+
+    .about-skills li {
+      font-size: 1rem;
+    }
+
+    .skills-note {
+      font-size: 0.88rem;
+    }
+
+    .contact {
+      width: 70%;
+      max-width: 300px;
+    }
+
+    .links-header {
+      padding: 0.4rem 0.4rem;
+    }
+
+    .links-title {
+      font-size: 1.3rem;
+    }
+
+    .links-header .links-close {
+      font-size: 1.1rem;
+    }
+
+    .links-body {
+      gap: 0.6rem;
+      padding: 0.6rem;
+    }
+
+    .links-body a {
+      gap: 0.8rem;
+      padding: 0.5rem 0.5rem;
+    }
+
+    .git img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .git span {
+      font-size: 1.1rem;
+    }
+
+    .linkedin img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .linkedin span {
+      font-size: 1.1rem;
+    }
+
+    .mail img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .mail span {
+      font-size: 1.1rem;
+    }
+}
+
+@media (width: 426px) {
+    body{
+        overflow-x: hidden;
+    }
+    .hero {
+        flex-direction: column;
+    }
+
+    .logo {
+        width: 3.4rem;
+        height: auto;
+    }
+
+    .content h2{
+        margin-top: 20%;
+        font-size: 1.7rem;
+        transform: translateX(-3%);
+    }
+
+    .content p {
+        font-size: 0.9rem;
+        transform: translateX(-3%);
+    }
+
+    .nintendo {
+        margin-top: 0;
+        width: 80%;
+        transform: translateX(20%);
+    }
+
+    .screen-text {
+        font-size: clamp(-1rem, 5vw, 1.2rem);
+    }
+
+    .bottom-screen button {
+        width: clamp(4.7rem, 4vw, 6rem);
+        padding: 0.1rem 0;
+        font-size: clamp(0.22rem, 2vw, 0.7rem);
+        border: 0.156rem solid #543A14;
+    }
+
+    .icon-star {
+      top: 7.8rem;
+      left: 1.7rem;
+      width: 2.9rem;
+    }
+
+    .icon-heart {
+      top: 8rem;
+      right: 2.5rem;
+      width: 2.6rem;
+    }
+
+    .icon-teddy {
+      top: 15rem;
+      right: 3rem;
+      width: 3rem;
+    }
+
+    .icon-Spider-Man {
+      top: 23rem;
+      left: 1rem;
+      width: 2.8rem;
+    }
+
+    .icon-earth {
+      top: 16rem;
+      right: 21rem;
+      width: 2.7rem;
+    }
+
+    .icon-cd {
+      top: 22rem;
+      right: 4.6rem;
+      width: 2.5rem;
+    }
+
+    .icon-Minecraft {
+      top: 5rem;
+      left: 11rem;
+      width: 2.6rem;
+    }
+
+    .header .title {
+      font-size: 1rem;
+    }
+
+    .header .close-button {
+      font-size: 1rem;
+    }
+
+    .header {
+      padding: 0.6rem 0.6rem;
+    }
+
+    .header-body img {
+      width: 34%;
+      height: 34%;
+    }
+
+    .about-text h3 {
+      font-size: 1rem;
+      margin: 0 0 0.3rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .about-text p span {
+      font-size: 0.9rem;
+    }
+
+    .about-text p {
+      font-size: 0.9rem;
+    }
+
+    .about-text ul span {
+      font-size: 0.9rem;
+    }
+
+    .about-text li {
+      font-size: 0.7rem;
+    }
+
+    .Skills {
+      width: 90%;
+      max-width: 500px;
+      height: 110%;
+      max-height: 60vh;
+    }
+
+    .skills-header {
+      padding: 0.3rem 0.3rem;
+    }
+
+    .skills-header .skills-title {
+      font-size: 1rem;
+    }
+
+    .skills-header .close-btn {
+      font-size: 0.8rem;
+    }
+
+    .about-skills h2 {
+      font-size: 1.4rem;
+    }
+
+    .about-skills h3 {
+      font-size: 1rem;
+    }
+
+    .about-skills li {
+      font-size: 1rem;
+    }
+
+    .skills-note {
+      font-size: 0.88rem;
+    }
+
+    .contact {
+      width: 70%;
+      max-width: 300px;
+    }
+
+    .links-header {
+      padding: 0.4rem 0.4rem;
+    }
+
+    .links-title {
+      font-size: 1.3rem;
+    }
+
+    .links-header .links-close {
+      font-size: 1.1rem;
+    }
+
+    .links-body {
+      gap: 0.6rem;
+      padding: 0.6rem;
+    }
+
+    .links-body a {
+      gap: 0.8rem;
+      padding: 0.5rem 0.5rem;
+    }
+
+    .git img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .git span {
+      font-size: 1.1rem;
+    }
+
+    .linkedin img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .linkedin span {
+      font-size: 1.1rem;
+    }
+
+    .mail img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .mail span {
+      font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 425px) {
+    body{
+        overflow-x: hidden;
+    }
+    .hero {
+        flex-direction: column;
+    }
+
+    .logo {
+        width: 3.4rem;
+        height: auto;
+    }
+
+    .content h2{
+        margin-top: 20%;
+        font-size: 1.7rem;
+        transform: translateX(-3%);
+    }
+
+    .content p {
+        font-size: 0.9rem;
+        transform: translateX(-3%);
+    }
+
+    .nintendo {
+        margin-top: 0;
+        width: 80%;
+        transform: translateX(20%);
+    }
+
+    .screen-text {
+        font-size: clamp(-1rem, 5vw, 1.2rem);
+    }
+
+    .bottom-screen button {
+        width: clamp(4.7rem, 4vw, 6rem);
+        padding: 0.1rem 0;
+        font-size: clamp(0.22rem, 2vw, 0.7rem);
+        border: 0.156rem solid #543A14;
+    }
+
+    .icon-star {
+      top: 7.8rem;
+      left: 1.7rem;
+      width: 2.9rem;
+    }
+
+    .icon-heart {
+      top: 8rem;
+      right: 2.5rem;
+      width: 2.6rem;
+    }
+
+    .icon-teddy {
+      top: 15rem;
+      right: 3rem;
+      width: 3rem;
+    }
+
+    .icon-Spider-Man {
+      top: 23rem;
+      left: 1rem;
+      width: 2.8rem;
+    }
+
+    .icon-earth {
+      top: 16rem;
+      right: 21rem;
+      width: 2.7rem;
+    }
+
+    .icon-cd {
+      top: 22rem;
+      right: 4.6rem;
+      width: 2.5rem;
+    }
+
+    .icon-Minecraft {
+      top: 5rem;
+      left: 11rem;
+      width: 2.6rem;
+    }
+
+    .header .title {
+      font-size: 1rem;
+    }
+
+    .header .close-button {
+      font-size: 1rem;
+    }
+
+    .header {
+      padding: 0.6rem 0.6rem;
+    }
+
+    .header-body img {
+      width: 34%;
+      height: 34%;
+    }
+
+    .about-text h3 {
+      font-size: 1rem;
+      margin: 0 0 0.3rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .about-text p span {
+      font-size: 0.9rem;
+    }
+
+    .about-text p {
+      font-size: 0.9rem;
+    }
+
+    .about-text ul span {
+      font-size: 0.9rem;
+    }
+
+    .about-text li {
+      font-size: 0.7rem;
+    }
+
+    .Skills {
+      width: 90%;
+      max-width: 500px;
+      height: 100%;
+      max-height: 60vh;
+    }
+
+    .skills-header {
+      padding: 0.3rem 0.3rem;
+    }
+
+    .skills-header .skills-title {
+      font-size: 1rem;
+    }
+
+    .skills-header .close-btn {
+      font-size: 0.8rem;
+    }
+
+    .about-skills h2 {
+      font-size: 1.4rem;
+    }
+
+    .about-skills h3 {
+      font-size: 1rem;
+    }
+
+    .about-skills li {
+      font-size: 1rem;
+    }
+
+    .skills-note {
+      font-size: 0.88rem;
+    }
+
+    .contact {
+      width: 70%;
+      max-width: 300px;
+    }
+
+    .links-header {
+      padding: 0.4rem 0.4rem;
+    }
+
+    .links-title {
+      font-size: 1.3rem;
+    }
+
+    .links-header .links-close {
+      font-size: 1.1rem;
+    }
+
+    .links-body {
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .links-body a {
+      gap: 0.8rem;
+      padding: 0.8rem 0.8rem;
+    }
+
+    .git img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .git span {
+      font-size: 1.1rem;
+    }
+
+    .linkedin img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .linkedin span {
+      font-size: 1.1rem;
+    }
+
+    .mail img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .mail span {
+      font-size: 1.1rem;
+    }
+}
+
+@media (width: 412px) {
+
+    .header .title {
+      font-size: 1rem;
+    }
+
+    .header .close-button {
+      font-size: 1rem;
+    }
+
+    .header {
+      padding: 0.5rem 0.5rem;
+    }
+
+    .header-body img {
+      width: 34%;
+      height: 34%;
+    }
+
+    .about-text h3 {
+      font-size: 1rem;
+      margin: 0 0 0.3rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .about-text p span {
+      font-size: 0.9rem;
+    }
+
+    .about-text p {
+      font-size: 0.9rem;
+    }
+
+    .about-text ul span {
+      font-size: 0.9rem;
+    }
+
+    .about-text li {
+      font-size: 0.7rem;
+    }
+
+    .Skills {
+      width: 90%;
+      max-width: 500px;
+      height: 100%;
+      max-height: 60vh;
+    }
+
+    .skills-header {
+      padding: 0.2rem 0.2rem;
+    }
+
+    .skills-header .skills-title {
+      font-size: 1rem;
+    }
+
+    .skills-header .close-btn {
+      font-size: 0.8rem;
+    }
+
+    .about-skills h2 {
+      font-size: 1.4rem;
+    }
+
+    .about-skills h3 {
+      font-size: 1rem;
+    }
+
+    .about-skills li {
+      font-size: 1rem;
+    }
+
+    .skills-note {
+      font-size: 0.88rem;
+    }
+
+    .contact {
+      width: 70%;
+      max-width: 300px;
+    }
+
+    .links-header {
+      padding: 0.4rem 0.4rem;
+    }
+
+    .links-title {
+      font-size: 1.3rem;
+    }
+
+    .links-header .links-close {
+      font-size: 1.1rem;
+    }
+
+    .links-body {
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .links-body a {
+      gap: 0.2rem;
+      padding: 0.2rem 0.2rem;
+    }
+
+    .git img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .git span {
+      font-size: 1.1rem;
+    }
+
+    .linkedin img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .linkedin span {
+      font-size: 1.1rem;
+    }
+
+    .mail img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .mail span {
+      font-size: 1.1rem;
+    }
+}
+
+
+@media (width: 375px) {
+
+    .icon-star {
+      top: 5rem;
+      left: 10rem;
+      width: 2.9rem;
+    }
+
+    .icon-heart {
+      top: 13rem;
+      right: 2.5rem;
+      width: 2.6rem;
+    }
+
+    .icon-teddy {
+      top: 28rem;
+      right: 7rem;
+      width: 3rem;
+    }
+
+    .icon-Spider-Man {
+      top: 23rem;
+      left: 1rem;
+      width: 2.8rem;
+    }
+
+    .icon-earth {
+      top: 3rem;
+      right: 1rem;
+      width: 2.7rem;
+    }
+
+    .icon-cd {
+      top: 22rem;
+      right: 3rem;
+      width: 2.5rem;
+    }
+
+    .icon-Minecraft {
+      top: 14rem;
+      left: 1rem;
+      width: 2.6rem;
+    }
+
+    .header .title {
+      font-size: 1rem;
+    }
+
+    .header .close-button {
+      font-size: 0.8rem;
+    }
+
+    .header {
+      padding: 0.4rem 0.4rem;
+    }
+
+    .header-body img {
+      width: 34%;
+      height: 34%;
+    }
+
+    .about-text h3 {
+      font-size: 0.8rem;
+      margin: 0 0 0.3rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .about-text p span {
+      font-size: 0.7rem;
+    }
+
+    .about-text p {
+      font-size: 0.7rem;
+    }
+
+    .about-text ul span {
+      font-size: 0.7rem;
+    }
+
+    .about-text li {
+      font-size: 0.6rem;
+    }
+
+    .Skills {
+      width: 90%;
+      max-width: 500px;
+      height: 110%;
+      max-height: 60vh;
+    }
+
+    .skills-header {
+      padding: 0.2rem 0.2rem;
+    }
+
+    .skills-header .skills-title {
+      font-size: 0.8rem;
+    }
+
+    .skills-header .close-btn {
+      font-size: 0.6rem;
+    }
+
+    .about-skills h2 {
+      font-size: 1.2rem;
+    }
+
+    .about-skills h3 {
+      font-size: 0.8rem;
+    }
+
+    .about-skills li {
+      font-size: 0.8rem;
+    }
+
+    .skills-note {
+      font-size: 0.8rem;
+    }
+
+    .contact {
+      width: 70%;
+      max-width: 300px;
+    }
+
+    .links-header {
+      padding: 0.3rem 0.3rem;
+    }
+
+    .links-title {
+      font-size: 1.2rem;
+    }
+
+    .links-header .links-close {
+      font-size: 1rem;
+    }
+
+    .links-body {
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    .links-body a {
+      gap: 0.8rem;
+      padding: 0.8rem 0.8rem;
+    }
+
+    .git img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .git span {
+      font-size: 1.1rem;
+    }
+
+    .linkedin img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .linkedin span {
+      font-size: 1.1rem;
+    }
+
+    .mail img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .mail span {
+      font-size: 1.1rem;
+    }
+    
+}
+
+@media (width: 390px) {
+
+    .icon-star {
+      top: 5rem;
+      left: 10rem;
+      width: 2.9rem;
+    }
+
+    .icon-heart {
+      top: 15rem;
+      right: 2.5rem;
+      width: 2.6rem;
+    }
+
+    .icon-teddy {
+      top: 28rem;
+      right: 7rem;
+      width: 3rem;
+    }
+
+    .icon-Spider-Man {
+      top: 23rem;
+      left: 1rem;
+      width: 2.8rem;
+    }
+
+    .icon-earth {
+      top: 3rem;
+      right: 1rem;
+      width: 2.7rem;
+    }
+
+    .icon-cd {
+      top: 22rem;
+      right: 3rem;
+      width: 2.5rem;
+    }
+
+    .icon-Minecraft {
+      top: 14rem;
+      left: 1rem;
+      width: 2.6rem;
+    }
+}
+
+@media (width: 360px) {
+
+    .icon-star {
+      top: 5rem;
+      left: 10rem;
+      width: 2.9rem;
+    }
+
+    .icon-heart {
+      top: 13rem;
+      right: 2.5rem;
+      width: 2.6rem;
+    }
+
+    .icon-teddy {
+      top: 28rem;
+      right: 7rem;
+      width: 3rem;
+    }
+
+    .icon-Spider-Man {
+      top: 23rem;
+      left: 1rem;
+      width: 2.8rem;
+    }
+
+    .icon-earth {
+      top: 3rem;
+      right: 1rem;
+      width: 2.7rem;
+    }
+
+    .icon-cd {
+      top: 22rem;
+      right: 3rem;
+      width: 2.5rem;
+    }
+
+    .icon-Minecraft {
+      top: 14rem;
+      left: 1rem;
+      width: 2.6rem;
+    }
+
+    .Skills {
+      width: 90%;
+      max-width: 500px;
+      height: 110%;
+      max-height: 60vh;
+    }
+
+    .skills-header {
+      padding: 0.2rem 0.2rem;
+    }
+
+    .skills-header .skills-title {
+      font-size: 0.8rem;
+    }
+
+    .skills-header .close-btn {
+      font-size: 0.6rem;
+    }
+
+    .about-skills h2 {
+      font-size: 1.2rem;
+    }
+
+    .about-skills h3 {
+      font-size: 0.8rem;
+    }
+
+    .about-skills li {
+      font-size: 0.8rem;
+    }
+
+    .skills-note {
+      font-size: 0.8rem;
+    }
+
+    .contact {
+      width: 70%;
+      max-width: 300px;
+    }
+
+    .links-header {
+      padding: 0.3rem 0.3rem;
+    }
+
+    .links-title {
+      font-size: 1.2rem;
+    }
+
+    .links-header .links-close {
+      font-size: 1rem;
+    }
+
+    .links-body {
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    .links-body a {
+      gap: 0.5rem;
+      padding: 0.4rem 0.4rem;
+    }
+
+    .git img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .git span {
+      font-size: 1.1rem;
+    }
+
+    .linkedin img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .linkedin span {
+      font-size: 1.1rem;
+    }
+
+    .mail img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .mail span {
+      font-size: 1.1rem;
+    }
+}
+
+@media (width: 320px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    .nintendo {
+        width: 89%;
+        transform: translateX(12%);
+    }
+
+    .screen-text {
+        font-size: clamp(-1rem, 5.4vw, 1.2rem);
+    }
+
+    .bottom-screen button {
+        width: clamp(4.7rem, 4vw, 6rem);
+        padding: 0.1rem 0;
+        font-size: clamp(0.22565rem, 2.6vw, 0.98rem);
+        border: 0.156rem solid #543A14;
+    }
+
+    .icon-star {
+      top: 5rem;
+      left: 10rem;
+      width: 2.9rem;
+    }
+
+    .icon-heart {
+      top: 13rem;
+      right: 2.5rem;
+      width: 2.6rem;
+    }
+
+    .icon-teddy {
+      top: 26rem;
+      right: 7rem;
+      width: 3rem;
+    }
+
+    .icon-Spider-Man {
+      top: 23rem;
+      left: 1rem;
+      width: 2.8rem;
+    }
+
+    .icon-earth {
+      top: 3rem;
+      right: 1rem;
+      width: 2.7rem;
+    }
+
+    .icon-cd {
+      top: 22rem;
+      right: 3rem;
+      width: 2.5rem;
+    }
+
+    .icon-Minecraft {
+      top: 14rem;
+      left: 1rem;
+      width: 2.6rem;
+    }
+
+    .header .title {
+      font-size: 1rem;
+    }
+
+    .header .close-button {
+      font-size: 0.6rem;
+    }
+
+    .header {
+      padding: 0.4rem 0.4rem;
+    }
+
+    .header-body img {
+      width: 34%;
+      height: 34%;
+    }
+
+    .about-text h3 {
+      font-size: 0.8rem;
+      margin: 0 0 0.3rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .about-text p span {
+      font-size: 0.7rem;
+    }
+
+    .about-text p {
+      font-size: 0.7rem;
+    }
+
+    .about-text ul span {
+      font-size: 0.7rem;
+    }
+
+    .about-text li {
+      font-size: 0.6rem;
+    }
+
+    .Skills {
+      width: 90%;
+      max-width: 500px;
+      height: 115%;
+      max-height: 60vh;
+    }
+
+    .skills-header {
+      padding: 0.2rem 0.2rem;
+    }
+
+    .skills-header .skills-title {
+      font-size: 0.8rem;
+    }
+
+    .skills-header .close-btn {
+      font-size: 0.6rem;
+    }
+
+    .about-skills h2 {
+      font-size: 1.2rem;
+    }
+
+    .about-skills h3 {
+      font-size: 0.8rem;
+    }
+
+    .about-skills li {
+      font-size: 0.8rem;
+    }
+
+    .skills-note {
+      font-size: 0.7rem;
+      margin-top: 0;
+    }
+
+    .contact {
+      width: 70%;
+      max-width: 300px;
+    }
+
+    .links-header {
+      padding: 0.3rem 0.3rem;
+    }
+
+    .links-title {
+      font-size: 1.2rem;
+    }
+
+    .links-header .links-close {
+      font-size: 1rem;
+    }
+
+    .links-body {
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    .links-body a {
+      gap: 0.8rem;
+      padding: 0.8rem 0.8rem;
+    }
+
+    .git img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .git span {
+      font-size: 1.1rem;
+    }
+
+    .linkedin img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .linkedin span {
+      font-size: 1.1rem;
+    }
+
+    .mail img {
+      width: 4.2vw;
+      height: 4.2vh;
+    }
+
+    .mail span {
+      font-size: 1.1rem;
+    }
+}
+
+@media (width: 820px) {
+
+    .icon-star {
+      top: 7rem;
+      left: 5rem;
+      width: 3rem;
+    }
+
+    .icon-heart {
+      top: 11rem;
+      right: 3rem;
+      width: 3rem;
+    }
+
+    .icon-teddy {
+      top: 4rem;
+      right: 5rem;
+      width: 4rem;
+    }
+
+    .icon-Spider-Man {
+      top: 8rem;
+      left: 27rem;
+      width: 3.3rem;
+    }
+
+    .icon-earth {
+      top: 18rem;
+      right: 24rem;
+      width: 3rem;
+    }
+
+    .icon-cd {
+      top: 17rem;
+      right: 6rem;
+      width: 2.7rem;
+    }
+
+    .icon-Minecraft {
+      top: 4rem;
+      left: 16rem;
+      width: 2.7rem;
+    }
+}
+
+
+@media (width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    nav {
+    padding: 0.77rem 2%;
+    }
+
+    .logo {
+    width: 4.5rem;
+    height: auto;
+    }
+
+    .hero {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .hero .content {
+        margin-top: 15%;
+    }
+
+    .content h2 {
+        font-size: 1.6rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+
+    .nintendo {
+        margin-top: 10%;
+        width: 100%;
+        height: auto;
+    }
+
+    .screen-text {
+        font-size: clamp(0.56rem, 5vw, 1.2rem);
+    }
+
+    .bottom-screen button {
+        width: clamp(6rem, 4vw, 4rem);
+        padding: 0.1rem 0;
+        font-size: clamp(0.22rem, 2vw, 0.7rem);
+        border: 0.156rem solid #543A14;
+                
+    }
+
+    .icon-star {
+      top: 7rem;
+      left: 5rem;
+      width: 3rem;
+    }
+
+    .icon-heart {
+      top: 11rem;
+      right: 3rem;
+      width: 3rem;
+    }
+
+    .icon-teddy {
+      top: 4rem;
+      right: 5rem;
+      width: 4rem;
+    }
+
+    .icon-Spider-Man {
+      top: 7rem;
+      left: 22rem;
+      width: 3.5rem;
+    }
+
+    .icon-earth {
+      top: 16rem;
+      right: 24rem;
+      width: 3rem;
+    }
+
+    .icon-cd {
+      top: 17rem;
+      right: 6.7rem;
+      width: 2.7rem;
+    }
+
+    .icon-Minecraft {
+      top: 4rem;
+      left: 16rem;
+      width: 2.7rem;
+    }
+
+    .Me {
+      width: 70%;
+      max-width: 350px;
+      height: 70%;
+      max-height: 48vh;
+    }
+
+    .header {
+      padding: 0.5rem 0.5rem;
+    }
+
+    .header-body img {
+      width: 35%;
+      height: 35%;
+    }
+
+    .about-text h3 {
+      margin: 0 0 0.5rem;
+      margin-bottom: 0.1rem;
+      font-size: 1.001rem;
+    }
+
+    .about-text p span {
+      font-size: 0.8rem;
+    }
+
+    .about-text p {
+      font-size: 0.8rem;
+    }
+
+    .about-text ul span {
+      font-size: 0.8rem;
+    }
+
+    .about-text li {
+      font-size: 0.8rem;
+    }
+
+    .Skills {
+      width: 70%;
+      max-width: 350px;
+    }
+
+    .skills-header {
+      padding: 0.5rem 0.5rem;
+    }
+
+    .about-skills h2 {
+      font-size: 1.6rem;
+    }
+
+    .about-skills h3 {
+      font-size: 1.3rem;
+    }
+
+    .about-skills li {
+      font-size: 1rem;
+    }
+
+    .skills-note {
+      font-size: 1rem;
+    }
+
+    .contact {
+      width: 70%;
+      max-width: 300px;
+    }
+
+    .links-header {
+      padding: 0.6rem 0.6rem;
+    }
+
+    .links-title {
+      font-size: 1.3rem;
+    }
+
+    .links-header .links-close {
+      font-size: 1.1rem;
+    }
+
+    .links-body {
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .links-body a {
+      gap: 0.8rem;
+      padding: 0.8rem 0.8rem;
+    }
+
+    .git span {
+      font-size: 1.3rem;
+    }
+
+    .linkedin span {
+      font-size: 1.3rem;
+    }
+
+    .mail span {
+      font-size: 1.3rem;
+    }
+}
+
+@media (width: 1075px) {
+
+    .icon-star {
+      top: 8rem;
+      left: 4rem;
+      width: 4.3rem;
+    }
+
+    .icon-heart {
+      top: 14rem;
+      right: 4rem;
+      width: 3.4rem;
+    }
+
+    .icon-teddy {
+      top: 7rem;
+      right: 7rem;
+      width: 4rem;
+    }
+
+    .icon-Spider-Man {
+      top: 10rem;
+      left: 35rem;
+      width: 4rem;
+    }
+
+    .icon-earth {
+      top: 24rem;
+      right: 45rem;
+      width: 3.5rem;
+    }
+
+    .icon-cd {
+      top: 23rem;
+      right: 8rem;
+      width: 2.6rem;
+    }
+
+    .icon-Minecraft {
+      top: 6rem;
+      left: 24rem;
+      width: 3rem;
+    }
+
+    .Me {
+      width: 70%;
+      max-width: 350px;
+      height: 70%;
+      max-height: 48vh;
+    }
+
+    .header {
+      padding: 0.5rem 0.5rem;
+    }
+
+    .header .title {
+      font-size: 1rem;
+    }
+
+    .header .close-button {
+      font-size: 0.8rem;
+    }
+
+    .header-body img {
+      width: 35%;
+      height: 35%;
+    }
+
+    .about-text h3 {
+      margin: 0 0 0.5rem;
+      margin-bottom: 0.1rem;
+      font-size: 1.001rem;
+    }
+
+    .about-text p span {
+      font-size: 0.8rem;
+    }
+
+    .about-text p {
+      font-size: 0.8rem;
+    }
+
+    .about-text ul span {
+      font-size: 0.8rem;
+    }
+
+    .about-text li {
+      font-size: 0.8rem;
+    }
+
+    .links-header {
+      padding: 0.8rem 0.8rem;
+    }
+
+    .links-title {
+      font-size: 1.3rem;
+    }
+
+    .links-header .links-close {
+      font-size: 1.1rem;
+    }
+
+    .links-body {
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .links-body a {
+      gap: 0.8rem;
+      padding: 0.8rem 0.8rem;
+    }
+
+    .git span {
+      font-size: 1.3rem;
+    }
+
+    .linkedin span {
+      font-size: 1.3rem;
+    }
+
+    .mail span {
+      font-size: 1.3rem;
+    }
+}
+
+@media (width: 1024px) {
+
+  .Skills {
+    width: 80%;
+    max-width: 500px;
+  }
+
+    .icon-star {
+      top: 8rem;
+      left: 4rem;
+      width: 4.3rem;
+    }
+
+    .icon-heart {
+      top: 14rem;
+      right: 4rem;
+      width: 3.4rem;
+    }
+
+    .icon-teddy {
+      top: 7rem;
+      right: 7rem;
+      width: 4rem;
+    }
+
+    .icon-Spider-Man {
+      top: 10rem;
+      left: 35rem;
+      width: 4rem;
+    }
+
+    .icon-earth {
+      top: 24rem;
+      right: 45rem;
+      width: 3.5rem;
+    }
+
+    .icon-cd {
+      top: 23rem;
+      right: 8rem;
+      width: 2.6rem;
+    }
+
+    .icon-Minecraft {
+      top: 6rem;
+      left: 24rem;
+      width: 3rem;
+    }
+
+    .Me {
+      width: 70%;
+      max-width: 350px;
+      height: 70%;
+      max-height: 48vh;
+    }
+
+    .header {
+      padding: 0.5rem 0.5rem;
+    }
+
+    .header .title {
+      font-size: 1rem;
+    }
+
+    .header .close-button {
+      font-size: 0.8rem;
+    }
+
+    .header-body img {
+      width: 35%;
+      height: 35%;
+    }
+
+    .about-text h3 {
+      margin: 0 0 0.5rem;
+      margin-bottom: 0.1rem;
+      font-size: 1.001rem;
+    }
+
+    .about-text p span {
+      font-size: 0.8rem;
+    }
+
+    .about-text p {
+      font-size: 0.8rem;
+    }
+
+    .about-text ul span {
+      font-size: 0.8rem;
+    }
+
+    .about-text li {
+      font-size: 0.8rem;
+    }
+
+    .links-header {
+      padding: 0.8rem 0.8rem;
+    }
+
+    .links-title {
+      font-size: 1.3rem;
+    }
+
+    .links-header .links-close {
+      font-size: 1.1rem;
+    }
+
+    .links-body {
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .links-body a {
+      gap: 0.8rem;
+      padding: 0.8rem 0.8rem;
+    }
+
+    .git span {
+      font-size: 1.3rem;
+    }
+
+    .linkedin span {
+      font-size: 1.3rem;
+    }
+
+    .mail span {
+      font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 1020px) {
+  .mobile-notice {
+    bottom: 0;
+  }
+}

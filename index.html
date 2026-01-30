@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="#" class="nav-logo">
+            <img src="logo4.png" class="logo">
+        </a>
+    </nav>
+    <div class="floating-icons">
+       <img src="starrr.png" class="float-icon icon-star">
+       <img src="teddy.png" class="float-icon icon-teddy">
+       <img src="Spider-Man.png" class="float-icon icon-Spider-Man">
+       <img src="earth.png" class="float-icon icon-earth">
+       <img src="cd.png" class="float-icon icon-cd">
+       <img src="heart.png" class="float-icon icon-heart">
+       <img src="minecrafttt.png" class="float-icon icon-Minecraft">
+   </div>
+    <main>
+        <section class="hero">
+            <div class="content">
+                <h2>Hi, I'm Shristi</h2>
+                <p>Welcome to my digital portfolio.
+                    A Computer Science undergraduate exploring
+                    code, project, and continuous learning. 
+                </p>
+            </div>
+            <div class="nintendo">
+                <img src="gameboy22.png" alt="nintendo" class="ds">
+                <div class="top-screen" id="top-screen">
+                    <div class="screen-text">Tap a button below</div>
+                </div>
+                <div class="bottom-screen" id="bottom-screen">
+                    <button data-me-target="#Me" onclick="const s=document.getElementById('clicksound'); s.currentTime=0; s.play()">About Me</button>
+                    <div class="Me" id="Me">
+                        <div class="header">
+                            <div class="title">About Me</div>
+                            <button data-close-button class="close-button">&times;</button>
+                        </div>
+                        <div class="header-body">
+                            <img src="pixelme.png" alt="mypfp" class="pfp">
+                            <div class="right">
+                                <div class="about-text">
+                                    <h3>Name: Shristi Raj <br>
+                                        📍 Patna, Bihar, India <br>
+                                    </h3>
+                                    <p><span>🎓 Education:</span> B.Tech in CSE (Pursuing) <br>
+                                        A first year Computer Science student who
+                                        is still figuring things out. <br>
+                                    </p>    
+                                    <ul><span>Other Interests:</span>
+                                         <li>Frontend Development</li>
+                                         <li>Game Development</li>
+                                         <li>Minecraft</li>
+                                         <li>Music, Movies and, Journaling</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button data-skills-target="#Skills" onclick="const s=document.getElementById('clicksound'); s.currentTime=0; s.play()">Skills</button>
+                    <div class="Skills" id="Skills">
+                        <div class="skills-header">
+                            <div class="skills-title">Skills</div>
+                            <button data-closeskills-button class="close-btn">&times;</button>
+                        </div>
+                        <div class="about-skills">
+                            <h2>Skills (Currently Learning)</h2>
+                            <h3>Programming & CS Fundamental 💻</h3>
+                            <ul>
+                                <li>C Programming (Basic, Practice)</li>
+                                <li>Problem Solving (Beginner)</li>
+                                <li>Data Structure & Alogrithms (Learning)</li>
+                            </ul>
+                            <h3>Web Development 🌐</h3>
+                            <ul>
+                                <li>HTML5</li>
+                                <li>CSS3 (Layout, Responsiveness)</li>
+                                <li>Basic JavaScript (Learning)</li>
+                            </ul>
+                            <h3>Tools & Platforms 🛠️</h3>
+                            <ul>
+                                <li>VS Code</li>
+                                <li>Git & GitHub (Beginner)</li>
+                                <li>Windows OS</li>
+                            </ul>
+                            <h3>Soft Skills 🤝</h3>
+                            <ul>
+                                <li>Consistent Learner</li>
+                                <li>Team Collaboration</li>
+                                <li>Time Management</li>
+                                <li>Curious & Detail-oriented</li>
+                            </ul>
+                            <h3>Other projects 💡</h3>
+                            <ul>
+                                <li>This website, for now this is the only project.</li>
+                            </ul>
+                            <p class="skills-note">🎀Actively learning and improving every day.🎀</p>
+                        </div>
+                    </div>
+                    <button data-links-target="#Links" onclick="const s=document.getElementById('clicksound'); s.currentTime=0; s.play()">Links</button>
+                      <div class="contact" id="contact">
+                        <div class="links-header">
+                            <div class="links-title">Links</div>
+                            <button data-closelinks-button class="links-close">&times;</button>
+                        </div>
+                        <div class="links-body">
+                            <div class="git">
+                                <a href="https://github.com/shristi-cse" target="_blank" rel="noopener noreferrer">
+                                    <img src="GITLOGO.png">
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                            <div class="linkedin">
+                                <a href="http://linkedin.com" target="_blank" rel="noopener noreferrer">
+                                    <img src="linkedinlogo.png">
+                                    <span>Linkedin</span>
+                                </a>
+                            </div>
+                            <div class="mail">
+                                <a href="mailto:shristiraj2007@gmail.com">
+                                    <img src="Maillogo.png">
+                                    <span>Email</span>
+                                </a>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <audio id="clicksound" src="popup.mp3"></audio>
+    <script src="script.js"></script>
+    <div class="mobile-notice" id="mobileNotice">
+        <p>This site is best experienced on desktop, some
+            features might be wonky on different devices.
+        </p>
+        <button id="closeNotice">Okay</button>
+    </div>
+</body>
+</html>
