@@ -1436,181 +1436,6 @@ nav {
     }
 }
 
-@media (width: 360px) {
-
-    .icon-star {
-      top: 5rem;
-      left: 10rem;
-      width: 2.9rem;
-    }
-
-    .icon-heart {
-      top: 13rem;
-      right: 2.5rem;
-      width: 2.6rem;
-    }
-
-    .icon-teddy {
-      top: 28rem;
-      right: 7rem;
-      width: 3rem;
-    }
-
-    .icon-Spider-Man {
-      top: 23rem;
-      left: 1rem;
-      width: 2.8rem;
-    }
-
-    .icon-earth {
-      top: 3rem;
-      right: 1rem;
-      width: 2.7rem;
-    }
-
-    .icon-cd {
-      top: 22rem;
-      right: 3rem;
-      width: 2.5rem;
-    }
-
-    .icon-Minecraft {
-      top: 14rem;
-      left: 1rem;
-      width: 2.6rem;
-    }
-
-    .header .title {
-      font-size: 1rem;
-    }
-
-    .header .close-button {
-      font-size: 0.8rem;
-    }
-
-    .header {
-      padding: 0.4rem 0.4rem;
-    }
-
-    .header-body img {
-      width: 34%;
-      height: 34%;
-    }
-
-    .about-text h3 {
-      font-size: 0.8rem;
-      margin: 0 0 0.3rem;
-      margin-bottom: 0.1rem;
-    }
-
-    .about-text p span {
-      font-size: 0.7rem;
-    }
-
-    .about-text p {
-      font-size: 0.7rem;
-    }
-
-    .about-text ul span {
-      font-size: 0.7rem;
-    }
-
-    .about-text li {
-      font-size: 0.6rem;
-    }
-
-    .Skills {
-      width: 90%;
-      max-width: 500px;
-      height: 110%;
-      max-height: 60vh;
-    }
-
-    .skills-header {
-      padding: 0.2rem 0.2rem;
-    }
-
-    .skills-header .skills-title {
-      font-size: 0.8rem;
-    }
-
-    .skills-header .close-btn {
-      font-size: 0.6rem;
-    }
-
-    .about-skills h2 {
-      font-size: 1.2rem;
-    }
-
-    .about-skills h3 {
-      font-size: 0.8rem;
-    }
-
-    .about-skills li {
-      font-size: 0.8rem;
-    }
-
-    .skills-note {
-      font-size: 0.8rem;
-    }
-
-    .contact {
-      width: 70%;
-      max-width: 300px;
-    }
-
-    .links-header {
-      padding: 0.3rem 0.3rem;
-    }
-
-    .links-title {
-      font-size: 1.2rem;
-    }
-
-    .links-header .links-close {
-      font-size: 1rem;
-    }
-
-    .links-body {
-      gap: 0.5rem;
-      padding: 0.5rem;
-    }
-
-    .links-body a {
-      gap: 0.8rem;
-      padding: 0.8rem 0.8rem;
-    }
-
-    .git img {
-      width: 4.2vw;
-      height: 4.2vh;
-    }
-
-    .git span {
-      font-size: 1.1rem;
-    }
-
-    .linkedin img {
-      width: 4.2vw;
-      height: 4.2vh;
-    }
-
-    .linkedin span {
-      font-size: 1.1rem;
-    }
-
-    .mail img {
-      width: 4.2vw;
-      height: 4.2vh;
-    }
-
-    .mail span {
-      font-size: 1.1rem;
-    }
-    
-}
-
-
 @media (width: 375px) {
 
     .icon-star {
@@ -1874,6 +1699,45 @@ nav {
       width: 2.6rem;
     }
 
+    .header .title {
+      font-size: 1rem;
+    }
+
+    .header .close-button {
+      font-size: 0.6rem;
+    }
+
+    .header {
+      padding: 0.4rem 0.4rem;
+    }
+
+    .header-body img {
+      width: 34%;
+      height: 34%;
+    }
+
+    .about-text h3 {
+      font-size: 0.8rem;
+      margin: 0 0 0.3rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .about-text p span {
+      font-size: 0.7rem;
+    }
+
+    .about-text p {
+      font-size: 0.7rem;
+    }
+
+    .about-text ul span {
+      font-size: 0.7rem;
+    }
+
+    .about-text li {
+      font-size: 0.6rem;
+    }
+
     .Skills {
       width: 90%;
       max-width: 500px;
@@ -1933,7 +1797,7 @@ nav {
 
     .links-body a {
       gap: 0.5rem;
-      padding: 0.4rem 0.4rem;
+      padding: 0.2rem 0.2rem;
     }
 
     .git img {
