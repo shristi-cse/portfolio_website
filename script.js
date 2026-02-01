@@ -11,79 +11,6 @@ closeBtn.addEventListener('click', () => {
     mePopup.classList.remove('active');
 });
 
-const popup = document.querySelector(".Me");
-const header = popup.querySelector(".header");
-
-const skillPopup = document.getElementById("Skills");
-const skillsHeader = skillPopup.querySelector(".skills-header");
-
-const contact = document.getElementById('contact');
-const linksheader = contact.querySelector('.links-header');
-
-
-let isDragging = false;
-let offsetX = 0;
-let offsetY = 0;
-
-header.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    popup.classList.add("dragging");
-
-    offsetX = e.clientX - popup.offsetLeft;
-    offsetY = e.clientY - popup.offsetTop;
-});
-
-document.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
-
-    popup.style.left = e.clientX - offsetX + "px";
-    popup.style.top = e.clientY - offsetY + "px";
-    popup.style.transform = "none";
-});
-
-document.addEventListener("mouseup", () => {
-    isDragging = false;
-    popup.classList.remove("dragging");
-});
-
-skillsHeader.addEventListener("mousedown", (e) => {
-    isDragging = true
-    offsetX = e.clientX - skillPopup.offsetLeft;
-    offsetY = e.clientY - skillPopup.offsetTop;
-    skillPopup.classList.add("dragging");
-});
-
-document.addEventListener("mousemove",(e) => {
-    if (!isDragging) return;
-
-    skillsPopup.style.left = e.clientX - offsetX + "px";
-    skillPopup.style.top = e.clientY - offsetY + "px";
-});
-
-document.addEventListener("mouseup", () => {
-    isDragging = false;
-    skillPopup.classList.remove("dragging");
-});
-
-linksheader.addEventListener("mousedown", (e) => {
-    isDragging = true
-    offsetX = e.clientX - contact.offsetLeft;
-    offsetY = e.clientY - contact.offsetTop;
-    contact.classList.add("dragging");
-});
-
-document.addEventListener("mousemove",(e) => {
-    if (!isDragging) return;
-
-    contact.style.left = e.clientX - offsetX + "px";
-    contact.style.top = e.clientY - offsetY + "px";
-});
-
-document.addEventListener("mouseup", () => {
-    isDragging = false;
-    contact.classList.remove("dragging");
-});
-
 const openSkillsBtn = document.querySelector('[data-skills-target]');
 const skillsPopup = document.querySelector('#Skills');
 const closeskillsBtn = document.querySelector('[data-closeskills-button]');
@@ -129,3 +56,4 @@ icons.forEach(icon => {
     icon.style.animationDelay = `${delay}s`;
 
 });
+
