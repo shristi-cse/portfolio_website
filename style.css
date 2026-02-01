@@ -247,12 +247,7 @@ nav {
   background-color: #FFEDFA;
   border-radius: 10px 10px 0 0;
   border-bottom: 1px solid black;
-  cursor: grab;
   user-select: none;
-}
-
-.header:active {
-  cursor: grabbing;
 }
 
 .header .title {
@@ -341,12 +336,7 @@ nav {
   background-color: #FFEDFA;
   border-radius: 10px 10px 0 0;
   border-bottom: 1px solid black;
-  cursor: grab;
   user-select: none;
-}
-
-.skills-header:active {
-  cursor: grabbing;
 }
 
 .skills-header .skills-title {
@@ -437,12 +427,7 @@ nav {
   background-color: #FFEDFA;
   border-radius: 10px 10px 0 0;
   border-bottom: 1px solid black;
-  cursor: grab;
   user-select: none;
-}
-
-.links-header:active {
-  cursor: grabbing;
 }
 
 .links-title {
@@ -2526,4 +2511,5 @@ nav {
   }
 
 }
+
 
